@@ -87,6 +87,7 @@ price_df["tommorrow_return"] = (
     - 1
 )
 
+'''并表'''
 result = pd.merge(
     price_df,
     factor_df,
@@ -94,6 +95,7 @@ result = pd.merge(
     how = "left"
 )
 
+'''因子排名'''
 result["rank"] = (
     result.groupby("date")["factor"]
         .rank(
